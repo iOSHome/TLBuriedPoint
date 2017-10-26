@@ -10,6 +10,5 @@
 
 @interface TLRootViewController : UITableViewController
 
-
 @end
 

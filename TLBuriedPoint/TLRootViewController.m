@@ -9,10 +9,38 @@
 #import "TLRootViewController.h"
 #import "TLAppDelegate.h"
 
-@interface TLRootViewController ()
+
+@interface TLSectionView : NSObject
 
 @property (nonatomic, strong) NSMutableArray *titles;
 @property (nonatomic, strong) NSMutableArray *classNames;
+
+@end
+
+@implementation TLSectionView
+
+-(instancetype)init {
+    self = [super init];
+    if (self) {
+        self.titles = @[].mutableCopy;
+        self.classNames = @[].mutableCopy;
+    }
+    
+    return self;
+}
+
+- (void)addCell:(NSString *)title class:(NSString *)className {
+    [self.titles addObject:title];
+    [self.classNames addObject:className];
+}
+
+@end
+
+
+
+@interface TLRootViewController ()
+
+@property (nonatomic, strong) NSMutableArray<TLSectionView *> *sections;
 
 @end
 
@@ -21,13 +49,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.titles = @[].mutableCopy;
-    self.classNames = @[].mutableCopy;
+    self.sections = @[].mutableCopy;
     
-    [self addCell:@"UITableView" class:@"TLTableViewController"];
-    [self addCell:@"UICollectionView" class:@"TLCollectionViewController"];
-    [self addCell:@"UIGestureRecognizer" class:@"TLGestureRecognizerViewController"];
+    TLSectionView *sectionView1 = [[TLSectionView alloc] init];
+    [sectionView1 addCell:@"UITableView" class:@"TLTableViewController"];
+    [sectionView1 addCell:@"UICollectionView" class:@"TLCollectionViewController"];
+    [self.sections addObject:sectionView1];
     
+    TLSectionView *sectionView2 = [[TLSectionView alloc] init];
+    [sectionView2 addCell:@"UIGestureRecognizer" class:@"TLGestureRecognizerViewController"];
+    [self.sections addObject:sectionView2];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -42,23 +73,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)addCell:(NSString *)title class:(NSString *)className {
-    [self.titles addObject:title];
-    [self.classNames addObject:className];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [self.sections count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return _titles.count;
-    }
     
-    return 0;
+    return [self.sections[section].titles count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,7 +90,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text = _titles[indexPath.row];
+    TLSectionView *sectionView = self.sections[indexPath.section];
+    cell.textLabel.text = sectionView.titles[indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -75,11 +99,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *className = self.classNames[indexPath.row];
+    TLSectionView *sectionView = self.sections[indexPath.section];
+    NSString *className = sectionView.classNames[indexPath.row];
     Class class = NSClassFromString(className);
     if (class) {
         UIViewController *ctrl = class.new;
-        ctrl.title = _titles[indexPath.row];
+        ctrl.title = sectionView.titles[indexPath.row];
         
         TLAppDelegate *appDelegate = (TLAppDelegate *) [UIApplication sharedApplication].delegate;
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
@@ -96,15 +121,29 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        UILabel *lblTitle = [[UILabel alloc] init];
-        lblTitle.backgroundColor = [UIColor grayColor];
-        lblTitle.textColor = [UIColor whiteColor];
-        lblTitle.text = @"Hook 列表控件";
-        return lblTitle;
-    } else {
-        return nil;
+    
+    UILabel *lblTitle = [[UILabel alloc] init];
+    lblTitle.backgroundColor = [UIColor grayColor];
+    lblTitle.textColor = [UIColor whiteColor];
+    
+    switch (section) {
+        case 0:
+        {
+            lblTitle.text = @"Hook 列表控件";
+            return lblTitle;
+        }
+            break;
+        case 1:
+        {
+            lblTitle.text = @"Hook 手势控件";
+            return lblTitle;
+        }
+            break;
+        default:
+            break;
     }
+
+    return nil;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
