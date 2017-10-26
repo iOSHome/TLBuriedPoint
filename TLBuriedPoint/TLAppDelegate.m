@@ -1,22 +1,38 @@
 //
-//  AppDelegate.m
+//  TLAppDelegate.m
 //  TLBuriedPoint
 //
 //  Created by lichuanjun on 2017/10/26.
 //  Copyright © 2017年 lichuanjun. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "TLAppDelegate.h"
+#import "TLRootViewController.h"
+#import "TLDetailViewController.h"
 
-@interface AppDelegate ()
+@interface TLAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation TLAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        self.viewController = [[UINavigationController alloc] initWithRootViewController:[[TLRootViewController alloc] init]];
+    } else if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        UISplitViewController *splitViewController = [[UISplitViewController alloc] init];
+        UINavigationController *leftNavigationController = [[UINavigationController alloc] initWithRootViewController:[[TLRootViewController alloc] init]];
+        UINavigationController *rightNavigationController = [[UINavigationController alloc] initWithRootViewController:[[TLDetailViewController alloc] init]];
+        splitViewController.viewControllers = [NSArray arrayWithObjects:leftNavigationController, rightNavigationController, nil];
+        self.viewController = splitViewController;
+    }
+    self.window.rootViewController = self.viewController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

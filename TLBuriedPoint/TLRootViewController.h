@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TLRootViewController.h
 //  TLBuriedPoint
 //
 //  Created by lichuanjun on 2017/10/26.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TLRootViewController : UITableViewController
 
 
 @end
