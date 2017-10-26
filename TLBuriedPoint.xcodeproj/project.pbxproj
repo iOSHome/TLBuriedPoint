@@ -15,6 +15,7 @@
 		7EE546391FA1914600560CF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE546381FA1914600560CF3 /* main.m */; };
 		7EE546431FA1914700560CF3 /* TLBuriedPointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE546421FA1914700560CF3 /* TLBuriedPointTests.m */; };
 		7EE5464E1FA1914700560CF3 /* TLBuriedPointUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5464D1FA1914700560CF3 /* TLBuriedPointUITests.m */; };
+		D4E5F1ADC7B16E468CF01345 /* Pods_TLBuriedPoint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8285997A1B1A17BA63EFD2E3 /* Pods_TLBuriedPoint.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5ABE533C4714DDB2265E01D8 /* Pods-TLBuriedPoint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLBuriedPoint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TLBuriedPoint/Pods-TLBuriedPoint.debug.xcconfig"; sourceTree = "<group>"; };
+		693294B83F21FCAA199C6C47 /* Pods-TLBuriedPoint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLBuriedPoint.release.xcconfig"; path = "Pods/Target Support Files/Pods-TLBuriedPoint/Pods-TLBuriedPoint.release.xcconfig"; sourceTree = "<group>"; };
 		7EE546261FA1914600560CF3 /* TLBuriedPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TLBuriedPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE546291FA1914600560CF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7EE5462A1FA1914600560CF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		7EE546491FA1914700560CF3 /* TLBuriedPointUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TLBuriedPointUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE5464D1FA1914700560CF3 /* TLBuriedPointUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLBuriedPointUITests.m; sourceTree = "<group>"; };
 		7EE5464F1FA1914700560CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8285997A1B1A17BA63EFD2E3 /* Pods_TLBuriedPoint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TLBuriedPoint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E5F1ADC7B16E468CF01345 /* Pods_TLBuriedPoint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1372C820EF7DC11A651EDEE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8285997A1B1A17BA63EFD2E3 /* Pods_TLBuriedPoint.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		19FC9395FDD016A1A390CD36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5ABE533C4714DDB2265E01D8 /* Pods-TLBuriedPoint.debug.xcconfig */,
+				693294B83F21FCAA199C6C47 /* Pods-TLBuriedPoint.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7EE5461D1FA1914600560CF3 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				7EE546411FA1914700560CF3 /* TLBuriedPointTests */,
 				7EE5464C1FA1914700560CF3 /* TLBuriedPointUITests */,
 				7EE546271FA1914600560CF3 /* Products */,
+				19FC9395FDD016A1A390CD36 /* Pods */,
+				1372C820EF7DC11A651EDEE6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EE546521FA1914700560CF3 /* Build configuration list for PBXNativeTarget "TLBuriedPoint" */;
 			buildPhases = (
+				FE52DCEC84289E8A3F2AD318 /* [CP] Check Pods Manifest.lock */,
 				7EE546221FA1914600560CF3 /* Sources */,
 				7EE546231FA1914600560CF3 /* Frameworks */,
 				7EE546241FA1914600560CF3 /* Resources */,
+				77CA5D9C4650FF1C14083404 /* [CP] Embed Pods Frameworks */,
+				47149C1BAC05672C89CBCF4A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +286,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47149C1BAC05672C89CBCF4A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TLBuriedPoint/Pods-TLBuriedPoint-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77CA5D9C4650FF1C14083404 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TLBuriedPoint/Pods-TLBuriedPoint-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
+				"${BUILT_PRODUCTS_DIR}/MLeaksFinder/MLeaksFinder.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MLeaksFinder.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TLBuriedPoint/Pods-TLBuriedPoint-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE52DCEC84289E8A3F2AD318 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TLBuriedPoint-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7EE546221FA1914600560CF3 /* Sources */ = {
@@ -428,6 +511,7 @@
 		};
 		7EE546531FA1914700560CF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ABE533C4714DDB2265E01D8 /* Pods-TLBuriedPoint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -441,6 +525,7 @@
 		};
 		7EE546541FA1914700560CF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 693294B83F21FCAA199C6C47 /* Pods-TLBuriedPoint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
