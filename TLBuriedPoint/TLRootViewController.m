@@ -26,6 +26,7 @@
     
     [self addCell:@"UITableView" class:@"TLTableViewController"];
     [self addCell:@"UICollectionView" class:@"TLCollectionViewController"];
+    [self addCell:@"UIGestureRecognizer" class:@"TLGestureRecognizerViewController"];
     
 }
 

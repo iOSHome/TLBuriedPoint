@@ -9,6 +9,13 @@
 #import "TLHookManager.h"
 #import "TLObjectPath.h"
 
+#if TARGET_OS_IPHONE
+#import <objc/runtime.h>
+#import <objc/message.h>
+#else
+#import <objc/objc-class.h>
+#endif
+
 @implementation TLHookManager
 
 + (TLHookManager *)sharedInstance
@@ -32,7 +39,6 @@
 #pragma mark - function
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"===indexPath:[%ld:%ld]===tableView:%@===",indexPath.section,indexPath.row,tableView);
     TLObjectPath *objPath = [[TLObjectPath alloc] init];
     NSString *path = [objPath getPathWithObject:tableView];
     
@@ -49,7 +55,6 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSLog(@"===collectionView:%@===[%ld:%ld]===",collectionView,indexPath.section,indexPath.row);
     TLObjectPath *objPath = [[TLObjectPath alloc] init];
     NSString *path = [objPath getPathWithObject:collectionView];
     
@@ -62,6 +67,125 @@
                           @"Collection backgroundColor": label
                           };
     NSLog(@"%@",dit);
+}
+
+-(void)gestureRecognizerAction:(UIGestureRecognizer*)gestureRecognizer{
+
+    if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) {
+        UITapGestureRecognizer *tapGestureRecognizer = (UITapGestureRecognizer *)gestureRecognizer;
+        [self tapGestureAction:tapGestureRecognizer];
+    }
+    
+    if ([gestureRecognizer isKindOfClass:[UISwipeGestureRecognizer class]]) {// 滑动手势
+        UISwipeGestureRecognizer *swipeGestureRecognizer = (UISwipeGestureRecognizer *)gestureRecognizer;
+        [self swipeGestureAction:swipeGestureRecognizer];
+    }
+    
+    if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]]) {// 长按手势
+        UILongPressGestureRecognizer *longGestureRecognizer = (UILongPressGestureRecognizer *)gestureRecognizer;
+        [self longPressGestureAction:longGestureRecognizer];
+    }
+    
+    if ([gestureRecognizer isKindOfClass:[UIPinchGestureRecognizer class]]) {// 捏合手势
+        
+        UIPinchGestureRecognizer *pinchGestureRecognizer = (UIPinchGestureRecognizer *)gestureRecognizer;
+        [self pinchGestureAction:pinchGestureRecognizer];
+    }
+    
+    if ([gestureRecognizer isKindOfClass:[UIRotationGestureRecognizer class]]) {// 旋转手势
+        UIRotationGestureRecognizer *rotationGestureRecognizer = (UIRotationGestureRecognizer *)gestureRecognizer;
+        [self rotationGestureAction:rotationGestureRecognizer];
+    }
+    
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {// 拖动手势
+        UIPanGestureRecognizer *panGestureRecognizer = (UIPanGestureRecognizer *)gestureRecognizer;
+        [self panGestureAction:panGestureRecognizer];
+    }
+}
+
+-(void)tapGestureAction:(UITapGestureRecognizer *)gestureRecognizer {
+    
+    switch (gestureRecognizer.numberOfTapsRequired) {
+        case 1: // 单击
+        {
+            NSLog(@"单击");
+        }
+            break;
+        case 2: // 双击
+        {
+            NSLog(@"双击");
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)longPressGestureAction:(UILongPressGestureRecognizer *)gestureRecognizer {
+
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"长按开始...");
+    }
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"长按结束...");
+    }
+}
+
+-(void)swipeGestureAction:(UISwipeGestureRecognizer *)gestureRecognizer {
+    
+    switch (gestureRecognizer.direction) {
+        case UISwipeGestureRecognizerDirectionUp: // 向上滑动
+        {
+            NSLog(@"向上滑动");
+        }
+            break;
+        case UISwipeGestureRecognizerDirectionDown: // 向下滑动
+        {
+            NSLog(@"向下滑动");
+        }
+            break;
+        case UISwipeGestureRecognizerDirectionLeft: // 向左滑动
+        {
+            NSLog(@"向左滑动");
+        }
+            break;
+        case UISwipeGestureRecognizerDirectionRight: // 向右滑动
+        {
+            NSLog(@"向右滑动");
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)pinchGestureAction:(UIPinchGestureRecognizer *)gestureRecognizer {
+    
+    if (gestureRecognizer.scale > 1) {
+        NSLog(@"向外捏合");
+    } else {
+        NSLog(@"向内捏合");
+    }
+}
+
+-(void)rotationGestureAction:(UIRotationGestureRecognizer *)gestureRecognizer {
+    
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"旋转开始...");
+    }
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"旋转结束...");
+    }
+}
+
+-(void)panGestureAction:(UIPanGestureRecognizer *)gestureRecognizer {
+
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"拖动开始...");
+    }
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"拖动结束...");
+    }
 }
 
 @end

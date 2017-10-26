@@ -1,0 +1,26 @@
+//
+//  TLBuriedPoint-Prefix.pch
+//  TLBuriedPoint
+//
+//  Created by lichuanjun on 2017/10/26.
+//  Copyright © 2017年 lichuanjun. All rights reserved.
+//
+
+#ifndef TLBuriedPoint_Prefix_pch
+#define TLBuriedPoint_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+// third library
+#import <Masonry/Masonry.h>
+#import <Mantle/Mantle.h>
+#import <Mantle/EXTScope.h>
+#import <Mantle/EXTKeyPathCoding.h>
+#endif
+
+#endif /* TLBuriedPoint_Prefix_pch */
