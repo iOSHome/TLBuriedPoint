@@ -9,10 +9,10 @@
 #import "TLUIWebViewController.h"
 
 @interface TLUIWebViewController ()<UIWebViewDelegate>
-{
-    UIWebView *webView;
-    UIActivityIndicatorView *activityIndicator;
-}
+
+@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation TLUIWebViewController
@@ -21,11 +21,11 @@
     [super viewDidLoad];
     self.title = @"WebView";
     
-    webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://m.baidu.com"]];
-    [self.view addSubview: webView];
-    [webView setDelegate:self];
-    [webView loadRequest:request];
+    [self.view addSubview: self.webView];
+    [self.webView setDelegate:self];
+    [self.webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,24 +42,24 @@
     [view setAlpha:0.5];
     [self.view addSubview:view];
     
-    activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
-    [activityIndicator setCenter:view.center];
-    [activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
-    [view addSubview:activityIndicator];
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)];
+    [self.activityIndicator setCenter:view.center];
+    [self.activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite];
+    [view addSubview:self.activityIndicator];
     
-    [activityIndicator startAnimating];
+    [self.activityIndicator startAnimating];
 }
 
 - (void) webViewDidFinishLoad:(UIWebView *)webView
 {
-    [activityIndicator stopAnimating];
+    [self.activityIndicator stopAnimating];
     UIView *view = (UIView*)[self.view viewWithTag:108];
     [view removeFromSuperview];
 }
 
 - (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    [activityIndicator stopAnimating];
+    [self.activityIndicator stopAnimating];
     UIView *view = (UIView*)[self.view viewWithTag:108];
     [view removeFromSuperview];
 }
