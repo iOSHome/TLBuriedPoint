@@ -71,7 +71,7 @@
 
 -(void)gestureRecognizerAction:(UIGestureRecognizer*)gestureRecognizer{
 
-    if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) {
+    if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) {// 轻触/点按
         UITapGestureRecognizer *tapGestureRecognizer = (UITapGestureRecognizer *)gestureRecognizer;
         [self tapGestureAction:tapGestureRecognizer];
     }
@@ -86,7 +86,7 @@
         [self longPressGestureAction:longGestureRecognizer];
     }
     
-    if ([gestureRecognizer isKindOfClass:[UIPinchGestureRecognizer class]]) {// 捏合手势
+    if ([gestureRecognizer isKindOfClass:[UIPinchGestureRecognizer class]]) {// 捏合手势，缩放用
         
         UIPinchGestureRecognizer *pinchGestureRecognizer = (UIPinchGestureRecognizer *)gestureRecognizer;
         [self pinchGestureAction:pinchGestureRecognizer];
@@ -97,9 +97,13 @@
         [self rotationGestureAction:rotationGestureRecognizer];
     }
     
-    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {// 拖动手势
+    if ([gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {// 拖拽手势
         UIPanGestureRecognizer *panGestureRecognizer = (UIPanGestureRecognizer *)gestureRecognizer;
         [self panGestureAction:panGestureRecognizer];
+    }
+    
+    if ( [gestureRecognizer.view respondsToSelector: @selector( setText: )] == YES ) {
+        NSLog(@"%@",[gestureRecognizer.view tl_text]);
     }
 }
 

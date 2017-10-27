@@ -59,6 +59,12 @@
     TLSectionView *sectionView2 = [[TLSectionView alloc] init];
     [sectionView2 addCell:@"UIGestureRecognizer" class:@"TLGestureRecognizerViewController"];
     [self.sections addObject:sectionView2];
+    
+    TLSectionView *sectionView3 = [[TLSectionView alloc] init];
+    [sectionView3 addCell:@"UIWebView" class:@"TLUIWebViewController"];
+    [sectionView3 addCell:@"WKWebView" class:@"TLWKWebViewController"];
+    [self.sections addObject:sectionView3];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -136,6 +142,12 @@
         case 1:
         {
             lblTitle.text = @"Hook 手势控件";
+            return lblTitle;
+        }
+            break;
+        case 2:
+        {
+            lblTitle.text = @"Hook 网页控件";
             return lblTitle;
         }
             break;

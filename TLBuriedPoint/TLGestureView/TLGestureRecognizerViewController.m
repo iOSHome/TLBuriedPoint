@@ -23,16 +23,7 @@
     self.title = @"GestureView";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tridonlee.png"]];
-    _imageView.backgroundColor = [UIColor yellowColor];
-    _imageView.userInteractionEnabled = YES;
-    [self.view addSubview:_imageView];
-    @weakify(self);
-    [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        @strongify(self);
-        make.center.equalTo(self.view);
-        make.width.height.equalTo(@(self.view.frame.size.width-30));
-    }];
+    [self initView];
     
     self.singleRecognizer = [self singleRecognizer];
     self.doubleRecognizer = [self doubleRecognizer];
@@ -44,6 +35,36 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)initView {
+    _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tridonlee.png"]];
+    _imageView.backgroundColor = [UIColor yellowColor];
+    _imageView.userInteractionEnabled = YES;
+    [self.view addSubview:_imageView];
+    [_imageView addGestureRecognizer:self.singleRecognizer];
+    @weakify(self);
+    [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.top.equalTo(self.view).offset(100.f);
+        make.centerX.equalTo(self.view);
+        make.width.height.equalTo(@(self.view.frame.size.width-30));
+    }];
+    
+    UILabel *labelName = [[UILabel alloc] init];
+    labelName.text = @"Leecj";
+    labelName.backgroundColor = [UIColor cyanColor];
+    labelName.textAlignment = NSTextAlignmentCenter;
+    labelName.userInteractionEnabled = YES;
+    [self.view addSubview:labelName];
+    [labelName addGestureRecognizer:self.singleRecognizer];
+    [labelName mas_makeConstraints:^(MASConstraintMaker *make) {
+        @strongify(self);
+        make.top.equalTo(_imageView.mas_bottom).offset(10.f);
+        make.left.equalTo(self.view).offset(15.f);
+        make.width.equalTo(@(80));
+        make.height.equalTo(@(40));
+    }];
+}
+
 #pragma mark - 触摸单击
 
 -(UITapGestureRecognizer* )singleRecognizer {
@@ -53,7 +74,6 @@
     singleRecognizer.numberOfTapsRequired = 1; // 单击
     singleRecognizer.numberOfTouchesRequired = 1;
 //    singleRecognizer.delegate = self;
-    [_imageView addGestureRecognizer:singleRecognizer];
     
     return singleRecognizer;
 }
