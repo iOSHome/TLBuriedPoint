@@ -133,7 +133,6 @@
     
     NSLog(@"加载：发送请求是否跳转--%@",webView);
     
-    
     WKNavigationActionPolicy actionPolicy = WKNavigationActionPolicyAllow;
     // 这句是必须加上的，不然会异常
     decisionHandler(actionPolicy);

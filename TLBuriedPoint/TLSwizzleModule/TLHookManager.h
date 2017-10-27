@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+#import <WebKit/WebKit.h>
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -24,16 +27,19 @@ NS_ASSUME_NONNULL_BEGIN
 // UIGestureRecognizer
 - (void)gestureRecognizerAction:(UIGestureRecognizer*)gestureRecognizer;
 
-//- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item;
-//- (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPushItem:(UINavigationItem *)item;
-//
-//
-//// UIWebView
-//- (void)webViewDidStartLoad:(UIWebView *)webView;
-//- (void)webViewDidFinishLoad:(UIWebView *)webView;
-//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
-//
-//
+// UIWebView
+- (void)webViewDidStartLoad:(UIWebView *)webView;
+- (void)webViewDidFinishLoad:(UIWebView *)webView;
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
+
+// WKWebView
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler;
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation;
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler;
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation;
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation;
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation;
+
 //// UIScrollView
 //- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView;
 //- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;

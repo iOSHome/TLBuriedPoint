@@ -192,4 +192,50 @@
     }
 }
 
+// UIWebView
+- (void)webViewDidStartLoad:(UIWebView *)webView {
+    NSLog(@"===webViewDidStartLoad===");
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    NSLog(@"===webViewDidFinishLoad===%@",webView.request);
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    NSLog(@"===didFailLoadWithError===%@",error);
+}
+
+
+// WKWebView
+
+// 1 在发送请求之前，决定是否跳转（注：不加上decisionHandler回调会造成闪退）
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    NSLog(@"1.发送请求是否跳转--%@",webView);
+}
+
+// 2 页面开始加载
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    NSLog(@"2.页面开始加载: url:%@",webView.URL);
+}
+
+// 3 在收到服务器的响应头，根据response相关信息，决定是否跳转
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+     NSLog(@"3.服务器响应头: url:%@",webView.URL);
+}
+
+// 4 开始获取到网页内容时返回
+- (void)webView:(WKWebView *)webView didCommitNavigation:(WKNavigation *)navigation {
+    NSLog(@"4.开始获取信息: url:%@",webView.URL);
+}
+
+// 5 页面加载完成之后调用
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    NSLog(@"5.页面加载完成: url:%@--title:%@",webView.URL,webView.title);
+}
+
+// 页面加载失败时调用
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation {
+    NSLog(@"6.页面加载失败: url:%@",webView.URL);
+}
+
 @end

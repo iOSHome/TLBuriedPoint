@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7E87B3D51FA2CB53008C391C /* TLUIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E87B3D41FA2CB53008C391C /* TLUIWebViewController.m */; };
 		7E87B3D81FA2CB87008C391C /* TLWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E87B3D71FA2CB87008C391C /* TLWKWebViewController.m */; };
+		7E87B3DB1FA2D47A008C391C /* UIWebView+TLHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E87B3DA1FA2D47A008C391C /* UIWebView+TLHook.m */; };
+		7E87B3DE1FA2D5E0008C391C /* WKWebView+TLHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E87B3DD1FA2D5E0008C391C /* WKWebView+TLHook.m */; };
 		7E9384CF1FA1E6B900BE32B2 /* TLGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E9384CE1FA1E6B900BE32B2 /* TLGestureRecognizerViewController.m */; };
 		7EB15F5B1FA1A3BD00E5FFE2 /* TLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB15F5A1FA1A3BD00E5FFE2 /* TLDetailViewController.m */; };
 		7EB15F631FA1A73300E5FFE2 /* TLCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB15F5D1FA1A73300E5FFE2 /* TLCollectionViewController.m */; };
@@ -57,6 +59,10 @@
 		7E87B3D41FA2CB53008C391C /* TLUIWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLUIWebViewController.m; sourceTree = "<group>"; };
 		7E87B3D61FA2CB87008C391C /* TLWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLWKWebViewController.h; sourceTree = "<group>"; };
 		7E87B3D71FA2CB87008C391C /* TLWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLWKWebViewController.m; sourceTree = "<group>"; };
+		7E87B3D91FA2D47A008C391C /* UIWebView+TLHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWebView+TLHook.h"; sourceTree = "<group>"; };
+		7E87B3DA1FA2D47A008C391C /* UIWebView+TLHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+TLHook.m"; sourceTree = "<group>"; };
+		7E87B3DC1FA2D5E0008C391C /* WKWebView+TLHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WKWebView+TLHook.h"; sourceTree = "<group>"; };
+		7E87B3DD1FA2D5E0008C391C /* WKWebView+TLHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WKWebView+TLHook.m"; sourceTree = "<group>"; };
 		7E9384CD1FA1E6B900BE32B2 /* TLGestureRecognizerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLGestureRecognizerViewController.h; sourceTree = "<group>"; };
 		7E9384CE1FA1E6B900BE32B2 /* TLGestureRecognizerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLGestureRecognizerViewController.m; sourceTree = "<group>"; };
 		7E9384D01FA1E7A800BE32B2 /* TLBuriedPoint-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLBuriedPoint-Prefix.pch"; sourceTree = "<group>"; };
@@ -195,6 +201,10 @@
 				7EB15F821FA1B07C00E5FFE2 /* UICollectionView+TLHook.m */,
 				7EB15F871FA1B9AE00E5FFE2 /* UIGestureRecognizer+TLHook.h */,
 				7EB15F881FA1B9AE00E5FFE2 /* UIGestureRecognizer+TLHook.m */,
+				7E87B3D91FA2D47A008C391C /* UIWebView+TLHook.h */,
+				7E87B3DA1FA2D47A008C391C /* UIWebView+TLHook.m */,
+				7E87B3DC1FA2D5E0008C391C /* WKWebView+TLHook.h */,
+				7E87B3DD1FA2D5E0008C391C /* WKWebView+TLHook.m */,
 			);
 			path = CategoriesModule;
 			sourceTree = "<group>";
@@ -471,6 +481,7 @@
 			files = (
 				7EE5462E1FA1914600560CF3 /* TLRootViewController.m in Sources */,
 				7EB15F761FA1AC0A00E5FFE2 /* TLHookManager.m in Sources */,
+				7E87B3DE1FA2D5E0008C391C /* WKWebView+TLHook.m in Sources */,
 				7EB15F6A1FA1A81E00E5FFE2 /* TLSwizzle.m in Sources */,
 				7E9384CF1FA1E6B900BE32B2 /* TLGestureRecognizerViewController.m in Sources */,
 				7EB15F631FA1A73300E5FFE2 /* TLCollectionViewController.m in Sources */,
@@ -479,6 +490,7 @@
 				7EB15F831FA1B07C00E5FFE2 /* UICollectionView+TLHook.m in Sources */,
 				7EB15F7D1FA1AE0300E5FFE2 /* UITableView+TLHook.m in Sources */,
 				7EB15F6F1FA1AACF00E5FFE2 /* TLPageExchangeInfo.m in Sources */,
+				7E87B3DB1FA2D47A008C391C /* UIWebView+TLHook.m in Sources */,
 				7EB15F5B1FA1A3BD00E5FFE2 /* TLDetailViewController.m in Sources */,
 				7EB15F891FA1B9AE00E5FFE2 /* UIGestureRecognizer+TLHook.m in Sources */,
 				7EE546391FA1914600560CF3 /* main.m in Sources */,
