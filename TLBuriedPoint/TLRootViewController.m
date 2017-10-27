@@ -70,7 +70,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.title = @"埋点设计";
+    self.title = @"黑盒装备";
     self.navigationController.navigationBarHidden = NO;
 }
 
