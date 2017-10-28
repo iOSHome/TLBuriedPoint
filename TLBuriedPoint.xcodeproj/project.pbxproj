@@ -190,7 +190,7 @@
 			path = TLSwizzleModule;
 			sourceTree = "<group>";
 		};
-		7EB15F7A1FA1AD8100E5FFE2 /* CategoriesModule */ = {
+		7EB15F7A1FA1AD8100E5FFE2 /* TLCategoriesModule */ = {
 			isa = PBXGroup;
 			children = (
 				7EB15F7E1FA1AEFE00E5FFE2 /* UIView+TLHook.h */,
@@ -206,7 +206,7 @@
 				7E87B3DC1FA2D5E0008C391C /* WKWebView+TLHook.h */,
 				7E87B3DD1FA2D5E0008C391C /* WKWebView+TLHook.m */,
 			);
-			path = CategoriesModule;
+			path = TLCategoriesModule;
 			sourceTree = "<group>";
 		};
 		7EB15F8A1FA1BAAF00E5FFE2 /* TLGestureView */ = {
@@ -245,7 +245,7 @@
 			children = (
 				7E87B3D21FA2CB26008C391C /* TLWebView */,
 				7EB15F671FA1A7F400E5FFE2 /* TLSwizzleModule */,
-				7EB15F7A1FA1AD8100E5FFE2 /* CategoriesModule */,
+				7EB15F7A1FA1AD8100E5FFE2 /* TLCategoriesModule */,
 				7EB15F8A1FA1BAAF00E5FFE2 /* TLGestureView */,
 				7EB15F5C1FA1A6AA00E5FFE2 /* TLListControl */,
 				7EE546291FA1914600560CF3 /* TLAppDelegate.h */,
