@@ -9,6 +9,7 @@
 #import "TLAppDelegate.h"
 #import "TLRootViewController.h"
 #import "TLDetailViewController.h"
+#include "TLHookAE.h"
 
 @interface TLAppDelegate ()
 
@@ -32,6 +33,9 @@
     self.window.rootViewController = self.viewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    TLHookAE *tlhookAE = [TLHookAE sharedInstanceWithToken:@"112233445566" launchOptions:launchOptions];
+    NSLog(@"%@",tlhookAE);
     
     return YES;
 }
