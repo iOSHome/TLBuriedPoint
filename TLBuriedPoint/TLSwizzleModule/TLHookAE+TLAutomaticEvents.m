@@ -11,6 +11,7 @@
 #import "TLSwizzle.h"
 #import "UIViewController+TLHook.h"
 #import "UIApplication+TLHookAE.h"
+#import "NSNotificationCenter+TLHookAE.h"
 
 @implementation TLHookAE (TLAutomaticEvents)
 
@@ -64,22 +65,22 @@ static TLHookAE *gSharedAutomatedInstance = nil;
             error = NULL;
         }
         
-//        // Notifications
-//        [NSNotificationCenter sp_swizzleMethod:@selector(postNotification:)
-//                                    withMethod:@selector(sp_postNotification:)
-//                                         error:&error];
-//        if (error) {
-//            SPLogError(@"Failed to swizzle postNotification: on NSNotificationCenter. Details: %@", error);
-//            error = NULL;
-//        }
-//        
-//        [NSNotificationCenter sp_swizzleMethod:@selector(postNotificationName:object:userInfo:)
-//                                    withMethod:@selector(sp_postNotificationName:object:userInfo:)
-//                                         error:&error];
-//        if (error) {
-//            SPLogError(@"Failed to swizzle postNotificationName:object:userInfo: on NSNotificationCenter. Details: %@", error);
-//            error = NULL;
-//        }
+        // Notifications
+        [NSNotificationCenter tl_swizzleMethod:@selector(postNotification:)
+                                    withMethod:@selector(tl_postNotification:)
+                                         error:&error];
+        if (error) {
+            NSLog(@"Failed to swizzle postNotification: on NSNotificationCenter. Details: %@", error);
+            error = NULL;
+        }
+        
+        [NSNotificationCenter tl_swizzleMethod:@selector(postNotificationName:object:userInfo:)
+                                    withMethod:@selector(tl_postNotificationName:object:userInfo:)
+                                         error:&error];
+        if (error) {
+            NSLog(@"Failed to swizzle postNotificationName:object:userInfo: on NSNotificationCenter. Details: %@", error);
+            error = NULL;
+        }
         
     });
 }
