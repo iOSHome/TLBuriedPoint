@@ -16,5 +16,9 @@
 - (instancetype)initWithToken:(NSString *)apiToken;
 - (instancetype)initWithToken:(NSString *)apiToken launchOptions:(NSDictionary *)launchOptions;
 
+- (void)track:(NSString *)event;
+- (void)track:(NSString *)event properties:(NSDictionary *)properties;
+
 @property (nonatomic, assign) BOOL validationEnabled;
+
 @end

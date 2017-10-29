@@ -91,4 +91,25 @@ static NSString *defaultProjectToken;
         [TLHookAE setSharedAutomatedInstance:nil];
     }
 }
+
+- (void)track:(NSString *)event
+{
+    [self track:event properties:nil];
+}
+
+- (void)track:(NSString *)event properties:(NSDictionary *)properties
+{
+    if (event.length == 0) {
+        NSLog(@"%@ specter track called with empty event parameter. using 'sp_event'", self);
+        event = @"sp_event";
+    }
+
+    properties = [properties copy];
+    
+    NSMutableDictionary *p = [NSMutableDictionary dictionaryWithObject:properties forKey:event];
+    
+    NSLog(@"%@", properties);
+}
+
+
 @end

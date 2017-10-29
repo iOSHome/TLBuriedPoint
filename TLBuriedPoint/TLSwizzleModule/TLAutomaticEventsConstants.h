@@ -9,5 +9,8 @@
 #ifndef TLAutomaticEventsConstants_h
 #define TLAutomaticEventsConstants_h
 
+#pragma mark - Strings
+static NSString *const kAutomaticEventName = @"$ios_event";
+
 
 #endif /* TLAutomaticEventsConstants_h */

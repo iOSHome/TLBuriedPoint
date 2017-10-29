@@ -29,6 +29,7 @@
 		7ED76B141FA59AFD000B8DEF /* TLHookAE.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED76B131FA59AFD000B8DEF /* TLHookAE.m */; };
 		7ED76B171FA59E13000B8DEF /* TLHookAE+TLAutomaticEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED76B161FA59E13000B8DEF /* TLHookAE+TLAutomaticEvents.m */; };
 		7ED76B1D1FA5C3DF000B8DEF /* UIApplication+TLHookAE.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED76B1C1FA5C3DF000B8DEF /* UIApplication+TLHookAE.m */; };
+		7ED76B201FA5C4A8000B8DEF /* NSNotificationCenter+TLHookAE.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED76B1F1FA5C4A8000B8DEF /* NSNotificationCenter+TLHookAE.m */; };
 		7EE5462B1FA1914600560CF3 /* TLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5462A1FA1914600560CF3 /* TLAppDelegate.m */; };
 		7EE5462E1FA1914600560CF3 /* TLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5462D1FA1914600560CF3 /* TLRootViewController.m */; };
 		7EE546331FA1914600560CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EE546321FA1914600560CF3 /* Assets.xcassets */; };
@@ -103,6 +104,8 @@
 		7ED76B161FA59E13000B8DEF /* TLHookAE+TLAutomaticEvents.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TLHookAE+TLAutomaticEvents.m"; sourceTree = "<group>"; };
 		7ED76B1B1FA5C3DF000B8DEF /* UIApplication+TLHookAE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+TLHookAE.h"; sourceTree = "<group>"; };
 		7ED76B1C1FA5C3DF000B8DEF /* UIApplication+TLHookAE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+TLHookAE.m"; sourceTree = "<group>"; };
+		7ED76B1E1FA5C4A8000B8DEF /* NSNotificationCenter+TLHookAE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+TLHookAE.h"; sourceTree = "<group>"; };
+		7ED76B1F1FA5C4A8000B8DEF /* NSNotificationCenter+TLHookAE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+TLHookAE.m"; sourceTree = "<group>"; };
 		7EE546261FA1914600560CF3 /* TLBuriedPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TLBuriedPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE546291FA1914600560CF3 /* TLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLAppDelegate.h; sourceTree = "<group>"; };
 		7EE5462A1FA1914600560CF3 /* TLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLAppDelegate.m; sourceTree = "<group>"; };
@@ -227,6 +230,8 @@
 				7ED76B0F1FA46DBC000B8DEF /* TLInterfaceManager.m */,
 				7ED76B1B1FA5C3DF000B8DEF /* UIApplication+TLHookAE.h */,
 				7ED76B1C1FA5C3DF000B8DEF /* UIApplication+TLHookAE.m */,
+				7ED76B1E1FA5C4A8000B8DEF /* NSNotificationCenter+TLHookAE.h */,
+				7ED76B1F1FA5C4A8000B8DEF /* NSNotificationCenter+TLHookAE.m */,
 			);
 			path = TLCategoriesModule;
 			sourceTree = "<group>";
@@ -514,6 +519,7 @@
 				7E87B3D81FA2CB87008C391C /* TLWKWebViewController.m in Sources */,
 				7EB15F831FA1B07C00E5FFE2 /* UICollectionView+TLHook.m in Sources */,
 				7EB15F7D1FA1AE0300E5FFE2 /* UITableView+TLHook.m in Sources */,
+				7ED76B201FA5C4A8000B8DEF /* NSNotificationCenter+TLHookAE.m in Sources */,
 				7E87B3DB1FA2D47A008C391C /* UIWebView+TLHook.m in Sources */,
 				7EB15F5B1FA1A3BD00E5FFE2 /* TLDetailViewController.m in Sources */,
 				7EB15F891FA1B9AE00E5FFE2 /* UIGestureRecognizer+TLHook.m in Sources */,
