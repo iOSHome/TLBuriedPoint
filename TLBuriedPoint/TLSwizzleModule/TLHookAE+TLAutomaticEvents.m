@@ -9,7 +9,8 @@
 #import "TLHookAE+TLAutomaticEvents.h"
 #import "TLHookAE.h"
 #import "TLSwizzle.h"
-#include "UIViewController+TLHook.h"
+#import "UIViewController+TLHook.h"
+#import "UIApplication+TLHookAE.h"
 
 @implementation TLHookAE (TLAutomaticEvents)
 
@@ -54,15 +55,15 @@ static TLHookAE *gSharedAutomatedInstance = nil;
             error = NULL;
         }
         
-//        // UIApplication Actions
-//        [UIApplication sp_swizzleMethod:@selector(sendAction:to:from:forEvent:)
-//                             withMethod:@selector(sp_sendAction:to:from:forEvent:)
-//                                  error:&error];
-//        if (error) {
-//            SPLogError(@"Failed to swizzle sendAction:to:from:forEvent: on UIAppplication. Details: %@", error);
-//            error = NULL;
-//        }
-//        
+        // UIApplication Actions
+        [UIApplication tl_swizzleMethod:@selector(sendAction:to:from:forEvent:)
+                             withMethod:@selector(tl_sendAction:to:from:forEvent:)
+                                  error:&error];
+        if (error) {
+            NSLog(@"Failed to swizzle sendAction:to:from:forEvent: on UIAppplication. Details: %@", error);
+            error = NULL;
+        }
+        
 //        // Notifications
 //        [NSNotificationCenter sp_swizzleMethod:@selector(postNotification:)
 //                                    withMethod:@selector(sp_postNotification:)

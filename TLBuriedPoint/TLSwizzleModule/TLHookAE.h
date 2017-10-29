@@ -10,6 +10,7 @@
 
 @interface TLHookAE : NSObject
 
++ (TLHookAE *)sharedInstance;
 + (TLHookAE *)sharedInstanceWithToken:(NSString *)apiToken launchOptions:(NSDictionary *)launchOptions;
 
 - (instancetype)initWithToken:(NSString *)apiToken;

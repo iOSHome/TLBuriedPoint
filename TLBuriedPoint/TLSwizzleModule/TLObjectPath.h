@@ -15,6 +15,8 @@
 
 - (NSString *)getInterfacePathWithObject:(id)object;
 
+-(NSString *) getCurrentPageClass;
+
 @end
 
 #pragma mark - Strings

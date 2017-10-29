@@ -18,7 +18,6 @@
 		7EB15F651FA1A73300E5FFE2 /* TLTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB15F611FA1A73300E5FFE2 /* TLTableViewController.m */; };
 		7EB15F661FA1A73300E5FFE2 /* TLTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EB15F621FA1A73300E5FFE2 /* TLTableViewController.xib */; };
 		7EB15F6A1FA1A81E00E5FFE2 /* TLSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB15F691FA1A81E00E5FFE2 /* TLSwizzle.m */; };
-		7EB15F6F1FA1AACF00E5FFE2 /* TLPageExchangeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB15F6C1FA1AACF00E5FFE2 /* TLPageExchangeInfo.m */; };
 		7EB15F701FA1AACF00E5FFE2 /* TLObjectPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB15F6E1FA1AACF00E5FFE2 /* TLObjectPath.m */; };
 		7EB15F761FA1AC0A00E5FFE2 /* TLHookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB15F751FA1AC0A00E5FFE2 /* TLHookManager.m */; };
 		7EB15F7D1FA1AE0300E5FFE2 /* UITableView+TLHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EB15F7C1FA1AE0300E5FFE2 /* UITableView+TLHook.m */; };
@@ -29,6 +28,7 @@
 		7ED76B101FA46DBC000B8DEF /* TLInterfaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED76B0F1FA46DBC000B8DEF /* TLInterfaceManager.m */; };
 		7ED76B141FA59AFD000B8DEF /* TLHookAE.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED76B131FA59AFD000B8DEF /* TLHookAE.m */; };
 		7ED76B171FA59E13000B8DEF /* TLHookAE+TLAutomaticEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED76B161FA59E13000B8DEF /* TLHookAE+TLAutomaticEvents.m */; };
+		7ED76B1D1FA5C3DF000B8DEF /* UIApplication+TLHookAE.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED76B1C1FA5C3DF000B8DEF /* UIApplication+TLHookAE.m */; };
 		7EE5462B1FA1914600560CF3 /* TLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5462A1FA1914600560CF3 /* TLAppDelegate.m */; };
 		7EE5462E1FA1914600560CF3 /* TLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE5462D1FA1914600560CF3 /* TLRootViewController.m */; };
 		7EE546331FA1914600560CF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EE546321FA1914600560CF3 /* Assets.xcassets */; };
@@ -80,8 +80,6 @@
 		7EB15F621FA1A73300E5FFE2 /* TLTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLTableViewController.xib; sourceTree = "<group>"; };
 		7EB15F681FA1A81E00E5FFE2 /* TLSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSwizzle.h; sourceTree = "<group>"; };
 		7EB15F691FA1A81E00E5FFE2 /* TLSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSwizzle.m; sourceTree = "<group>"; };
-		7EB15F6B1FA1AACF00E5FFE2 /* TLPageExchangeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLPageExchangeInfo.h; sourceTree = "<group>"; };
-		7EB15F6C1FA1AACF00E5FFE2 /* TLPageExchangeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLPageExchangeInfo.m; sourceTree = "<group>"; };
 		7EB15F6D1FA1AACF00E5FFE2 /* TLObjectPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLObjectPath.h; sourceTree = "<group>"; };
 		7EB15F6E1FA1AACF00E5FFE2 /* TLObjectPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLObjectPath.m; sourceTree = "<group>"; };
 		7EB15F741FA1AC0A00E5FFE2 /* TLHookManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLHookManager.h; sourceTree = "<group>"; };
@@ -103,6 +101,8 @@
 		7ED76B131FA59AFD000B8DEF /* TLHookAE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLHookAE.m; sourceTree = "<group>"; };
 		7ED76B151FA59E13000B8DEF /* TLHookAE+TLAutomaticEvents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TLHookAE+TLAutomaticEvents.h"; sourceTree = "<group>"; };
 		7ED76B161FA59E13000B8DEF /* TLHookAE+TLAutomaticEvents.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TLHookAE+TLAutomaticEvents.m"; sourceTree = "<group>"; };
+		7ED76B1B1FA5C3DF000B8DEF /* UIApplication+TLHookAE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+TLHookAE.h"; sourceTree = "<group>"; };
+		7ED76B1C1FA5C3DF000B8DEF /* UIApplication+TLHookAE.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+TLHookAE.m"; sourceTree = "<group>"; };
 		7EE546261FA1914600560CF3 /* TLBuriedPoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TLBuriedPoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE546291FA1914600560CF3 /* TLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLAppDelegate.h; sourceTree = "<group>"; };
 		7EE5462A1FA1914600560CF3 /* TLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLAppDelegate.m; sourceTree = "<group>"; };
@@ -193,8 +193,6 @@
 			children = (
 				7EB15F6D1FA1AACF00E5FFE2 /* TLObjectPath.h */,
 				7EB15F6E1FA1AACF00E5FFE2 /* TLObjectPath.m */,
-				7EB15F6B1FA1AACF00E5FFE2 /* TLPageExchangeInfo.h */,
-				7EB15F6C1FA1AACF00E5FFE2 /* TLPageExchangeInfo.m */,
 				7EB15F681FA1A81E00E5FFE2 /* TLSwizzle.h */,
 				7EB15F691FA1A81E00E5FFE2 /* TLSwizzle.m */,
 				7EB15F741FA1AC0A00E5FFE2 /* TLHookManager.h */,
@@ -227,6 +225,8 @@
 				7E87B3DD1FA2D5E0008C391C /* WKWebView+TLHook.m */,
 				7ED76B0E1FA46DBC000B8DEF /* TLInterfaceManager.h */,
 				7ED76B0F1FA46DBC000B8DEF /* TLInterfaceManager.m */,
+				7ED76B1B1FA5C3DF000B8DEF /* UIApplication+TLHookAE.h */,
+				7ED76B1C1FA5C3DF000B8DEF /* UIApplication+TLHookAE.m */,
 			);
 			path = TLCategoriesModule;
 			sourceTree = "<group>";
@@ -508,12 +508,12 @@
 				7EB15F6A1FA1A81E00E5FFE2 /* TLSwizzle.m in Sources */,
 				7E9384CF1FA1E6B900BE32B2 /* TLGestureRecognizerViewController.m in Sources */,
 				7EB15F631FA1A73300E5FFE2 /* TLCollectionViewController.m in Sources */,
+				7ED76B1D1FA5C3DF000B8DEF /* UIApplication+TLHookAE.m in Sources */,
 				7ED76B171FA59E13000B8DEF /* TLHookAE+TLAutomaticEvents.m in Sources */,
 				7EB15F801FA1AEFE00E5FFE2 /* UIView+TLHook.m in Sources */,
 				7E87B3D81FA2CB87008C391C /* TLWKWebViewController.m in Sources */,
 				7EB15F831FA1B07C00E5FFE2 /* UICollectionView+TLHook.m in Sources */,
 				7EB15F7D1FA1AE0300E5FFE2 /* UITableView+TLHook.m in Sources */,
-				7EB15F6F1FA1AACF00E5FFE2 /* TLPageExchangeInfo.m in Sources */,
 				7E87B3DB1FA2D47A008C391C /* UIWebView+TLHook.m in Sources */,
 				7EB15F5B1FA1A3BD00E5FFE2 /* TLDetailViewController.m in Sources */,
 				7EB15F891FA1B9AE00E5FFE2 /* UIGestureRecognizer+TLHook.m in Sources */,
