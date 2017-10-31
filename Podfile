@@ -7,5 +7,6 @@ target :TLBuriedPoint do
   pod 'MLeaksFinder', '~> 0.2.1'
   pod 'Mantle', '<= 1.5'
   pod 'Masonry', '~> 1.0.1'
+  pod 'Aspects', '~> 1.4.1'
   
 end
