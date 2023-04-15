@@ -17,7 +17,6 @@
 
 @implementation TLAppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
@@ -67,5 +66,13 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+//- (void)application:(UIApplication *)application willChangeStatusBarFrame:(CGRect)newStatusBarFrame
+//{
+//    self.currentStatusBarFrame = newStatusBarFrame;
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"Status Bar Frame Change"
+//                                                        object:self
+//                                                      userInfo:@{@"current status bar frame": [NSValue valueWithCGRect:newStatusBarFrame]}];
+//
+//}
 
 @end

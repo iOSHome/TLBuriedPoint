@@ -65,6 +65,9 @@
     [sectionView3 addCell:@"WKWebView" class:@"TLWKWebViewController"];
     [self.sections addObject:sectionView3];
     
+    TLSectionView *sectionView4 = [[TLSectionView alloc] init];
+    [sectionView4 addCell:@"StatusBar" class:@"TLCallStatusBarController"];
+    [self.sections addObject:sectionView4];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -148,6 +151,12 @@
         case 2:
         {
             lblTitle.text = @"Hook 网页控件";
+            return lblTitle;
+        }
+            break;
+        case 3:
+        {
+            lblTitle.text = @"状态栏";
             return lblTitle;
         }
             break;
